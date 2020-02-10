@@ -1,9 +1,13 @@
+# -*- coding: utf-8 -*-
+
 import asyncio
 import os
 
-from recorder.utils import get_logger
+from recorder.utils import get_logger, load_config
 from recorder.exceptions import FFmpegExecutableError, FFmpegExecutableNotFoundError, FFmpegProcessingError
-from recorder.config import config
+
+
+config = load_config()
 
 
 class Download():
@@ -17,8 +21,7 @@ class Download():
         self.file = os.path.join(self.output_dir, self.filename)
     
     async def start(self) -> str:
-        is_exists = os.path.exists(self.output_dir)
-        if is_exists is not True:
+        if os.path.exists(self.output_dir) is not True:
             self.logger.debug("Log folder is not exists, creating...")
             os.mkdir(self.output_dir)
         try:

@@ -24,11 +24,11 @@ class BilibiliApi():
             try:
                 if config['enable_proxy']:
                     proxy = config['proxy']
-                    logger.debug(f"使用代理 {proxy} 请求API {url}")
+                    logger.debug(f"正在使用代理 {proxy} 请求API {url}")
                     async with session.get(url, headers=headers, proxy=proxy) as response:
                         dict = await response.json()
                 else:
-                    logger.debug(f"请求API {url}")
+                    logger.debug(f"正在请求API {url}")
                     async with session.get(url, headers=headers) as response:
                         dict = await response.json()
             except Exception as e:

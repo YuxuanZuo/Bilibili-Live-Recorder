@@ -1,19 +1,22 @@
 import asyncio
 import time
 
-from recorder.recorder import Recorder
-from recorder.utils import get_logger
-from recorder.config import config
+from recorder.monitor import Monitor
+from recorder.utils import get_logger, load_config
+
+
+config = load_config()
+
 
 class LiveRecorder():
     def __init__(self, cids, executable='ffmpeg'):
         self.cids = cids
         self.executable = executable
-    
+
     async def _tasks(self):
         tasks = []
         for cid in self.cids:
-            task = Recorder(cid, self.executable).main()
+            task = Monitor(cid, self.executable).main()
             tasks.append(task)
         await asyncio.gather(*tasks)
     

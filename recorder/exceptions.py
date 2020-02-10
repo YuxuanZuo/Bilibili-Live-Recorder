@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class LiveRecorderError(Exception):
     pass
 
