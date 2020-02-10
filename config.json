@@ -1,0 +1,28 @@
+{
+    "enable_proxy": false,
+    "proxy": "http://127.0.0.1:8080",
+    "save_log": true,
+    "max_retry_num": 3,
+    "retry_sec": 1,
+    "check_interval": 15,
+    "output_type": ".mp4",
+    "output_dir": "./output/",
+    "users": [
+        {
+            "room_id": 15152878,
+            "enable": true
+        },
+        {
+            "room_id": 21547895,
+            "enable": true
+        },
+        {
+            "room_id": 21547904,
+            "enable": true
+        },
+        {
+            "room_id": 1314,
+            "enable": true
+        }
+    ]
+}
