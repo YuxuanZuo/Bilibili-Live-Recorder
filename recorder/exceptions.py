@@ -21,18 +21,31 @@ class APIError(RequestError):
         return reason
 
 
-class FFmpegExecutableError(LiveRecorderError):
+class FFmpegError(LiveRecorderError):
     pass
 
 
-class FFmpegExecutableNotFoundError(FFmpegExecutableError):
-
-    def __str__(self):
-        reason = "FFmpeg executable not found!"
-        return reason
+class FFmpegExecutableError(FFmpegError):
+    pass
 
 
-class FFmpegProcessingError(LiveRecorderError):
+class FFmpegExecutableNotFoundError(FFmpegError):
+    pass
+
+
+class FFmpegProcessingError(FFmpegError):
+    pass
+
+
+class ConfigFileError(LiveRecorderError):
+    pass
+
+
+class ConfigFileReadError(ConfigFileError):
+    pass
+
+
+class ConfigFileNotFoundError(ConfigFileError):
     pass
 
 
