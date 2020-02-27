@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import asyncio
-import aiohttp
 import logging
+
+import aiohttp
 
 from recorder.utils import Utils
 from recorder.exceptions import RequestError, APIError
