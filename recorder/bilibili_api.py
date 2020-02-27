@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
+
 import asyncio
 import aiohttp
 import logging
 
-from recorder.utils import get_logger, load_config
+from recorder.utils import Utils
 from recorder.exceptions import RequestError, APIError
 
 
-config = load_config()
-logger = get_logger(__name__)
+config = Utils.load_config()
+logger = Utils.get_logger(__name__)
 
 
 class BilibiliApi():
