@@ -2,10 +2,11 @@ import asyncio
 import time
 
 from recorder.monitor import Monitor
-from recorder.utils import get_logger, load_config
+from recorder.utils import Utils
 
 
-config = load_config()
+config = Utils.load_config()
+logger = Utils.get_logger(__name__)
 
 
 class LiveRecorder():
