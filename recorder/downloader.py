@@ -29,8 +29,8 @@ class Download():
             logger.info(f"Starting the stream download process, URL: {self.url}")
             proc = await asyncio.create_subprocess_exec(
                 self.executable,
-                '-headers', 'User-Agent: Mozilla/5.0 (iPhone; CPU 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile Safari/604.1',
-                '-headers', f"Referer: https://live.bilibili.com/h5/{self.cid}",
+                '-user_agent', "Mozilla/5.0 (iPhone; CPU 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile Safari/604.1",
+                '-referer', f"https://live.bilibili.com/h5/{self.cid}",
                 '-i', self.url, '-c', 'copy', self.file,
                 stdout=asyncio.subprocess.PIPE,
                 stderr=asyncio.subprocess.PIPE)
