@@ -53,7 +53,7 @@ class Monitor():
             current_time = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
             splice = ['record-', str(self.cid), '_', current_time, self.output_type]
             filename = ''.join(splice)
-            return await Download(stream_url, filename, self.executable).start()
+            return await Download(stream_url, self.cid, filename, self.executable).start()
         else:
             logger.info(f"[房间 {self.cid}] 直播未开始.")
             return ''

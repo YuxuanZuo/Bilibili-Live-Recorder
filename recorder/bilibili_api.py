@@ -21,6 +21,7 @@ class BilibiliApi():
     async def _request(self, url: str) -> dict:
         headers = {}
         headers['User-Agent'] = 'Mozilla/5.0 (iPhone; CPU 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile Safari/604.1'
+        headers['Origin'] = 'https://live.bilibili.com'
         headers['Referer'] = f"https://live.bilibili.com/h5/{self.cid}"
         async with aiohttp.ClientSession() as session:
             try:
